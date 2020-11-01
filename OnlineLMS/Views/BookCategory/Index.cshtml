@@ -1,0 +1,49 @@
+﻿@model IEnumerable<OnlineLMS.Models.BookCategoryModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Book Category Details</h2>
+
+<p class= "btn btn-primary">
+    @Html.ActionLink("Create New", "AddData")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookCategoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookCategoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookCategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Edit", "Edit", new { id = item.BookCategoryID })
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Details", "Details", new { id = item.BookCategoryID })
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Delete", "Delete", new { id = item.BookCategoryID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,13 @@
+﻿@using SessionProject.Models;
+
+@{
+    ViewBag.Title = "Display";
+
+    LoginUserModel abc = new LoginUserModel();
+    abc = (LoginUserModel)Session["SessionModel"];
+
+}
+
+<h2>Display</h2>
+<h2>@abc.Username</h2>
+

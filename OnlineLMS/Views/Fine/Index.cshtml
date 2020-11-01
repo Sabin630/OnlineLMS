@@ -1,0 +1,61 @@
+﻿@model IEnumerable<OnlineLMS.Models.FineModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Fine Details</h2>
+
+<p class=" = btn btn-primary">
+    @Html.ActionLink("Create New", "AddData")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FineID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LateDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StaffMemberID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FineID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LateDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StaffMemberID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Edit", "Edit", new { id = item.FineID })
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Details", "Details", new { id = item.FineID })
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Delete", "Delete", new { id = item.FineID })
+        </td>
+    </tr>
+}
+
+</table>

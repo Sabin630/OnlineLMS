@@ -1,0 +1,53 @@
+﻿@model IEnumerable<OnlineLMS.Models.MemberCategoryModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Member Category Details</h2>
+
+<p class=" = btn btn-primary">
+    @Html.ActionLink("Create New", "AddData")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StaffMemberID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberCategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        using (Html.BeginForm("Delete", "memberCategory", new { id = item.StaffMemberID }))
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StaffMemberID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberCategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Edit", "Edit", new { id = item.StaffMemberID })
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Details", "Details", new { id = item.StaffMemberID })
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Delete", "Delete", new { id = item.StaffMemberID })
+        </td>
+    </tr>
+        }
+    }
+
+</table>

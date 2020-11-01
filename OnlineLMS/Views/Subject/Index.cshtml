@@ -1,0 +1,49 @@
+﻿@model IEnumerable<OnlineLMS.Models.SubjectModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Subject Details</h2>
+
+<p class="btn btn-primary">
+    @Html.ActionLink("Create New", "AddData")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.SubjectID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SubjectName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Remarks)
+    </td>
+    <td class="btn btn-primary">
+        @Html.ActionLink("Edit", "Edit", new { id = item.SubjectID})
+    </td>
+    <td class="btn btn-primary">
+        @Html.ActionLink("Details", "Details", new { id = item.SubjectID})
+    </td>
+    <td class="btn btn-primary">
+        @Html.ActionLink("Delete", "Delete", new { id = item.SubjectID})
+    </td>
+</tr>
+}
+
+</table>

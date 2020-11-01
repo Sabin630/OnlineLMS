@@ -1,0 +1,91 @@
+﻿@model IEnumerable<OnlineLMS.Models.BookIssueRetModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Book Issue Returns Details</h2>
+
+<p class="btn btn-primary">
+    @Html.ActionLink("Create New", "AddData")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookIssueReturnID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssesionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IssueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FineAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StaffMemberID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.BookIssueReturnID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MemberID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AssesionID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IssueDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DueDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReturnDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FineAmount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StaffMemberID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Remarks)
+    </td>
+    <td class="btn btn-primary">
+        @Html.ActionLink("Edit", "Edit", new { id = item.BookIssueReturnID })
+    </td>
+    <td class="btn btn-primary">
+        @Html.ActionLink("Details", "Details", new { id = item.BookIssueReturnID })
+    </td>
+    <td class="btn btn-primary">
+        @Html.ActionLink("Delete", "Delete", new { id = item.BookIssueReturnID })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="673d90be21494fb99585e7d94e3d0064" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="LMSDBModel.AssesionMapping" Width="1.5" PointX="5.25" PointY="1.75" />
+        <EntityTypeShape EntityType="LMSDBModel.Author" Width="1.5" PointX="0.75" PointY="1.875" />
+        <EntityTypeShape EntityType="LMSDBModel.Book" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="LMSDBModel.BookCategory" Width="1.5" PointX="0.75" PointY="7.375" />
+        <EntityTypeShape EntityType="LMSDBModel.BookIssueRet" Width="1.5" PointX="7.75" PointY="2.125" />
+        <EntityTypeShape EntityType="LMSDBModel.Fine" Width="1.5" PointX="7.375" PointY="6.5" />
+        <EntityTypeShape EntityType="LMSDBModel.Member" Width="1.5" PointX="5.125" PointY="4.625" />
+        <EntityTypeShape EntityType="LMSDBModel.MemberCategory" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="LMSDBModel.Subject" Width="1.5" PointX="0.875" PointY="4.5" />
+        <AssociationConnector Association="LMSDBModel.FK__AssesionM__BookI__1FCDBCEB" />
+        <AssociationConnector Association="LMSDBModel.FK__BookIssue__Asses__267ABA7A" />
+        <AssociationConnector Association="LMSDBModel.FK__Book__AuthorID__20C1E124" />
+        <AssociationConnector Association="LMSDBModel.FK__Book__BookCatego__403A8C7D" />
+        <AssociationConnector Association="LMSDBModel.FK__Book__SubjectID__21B6055D" />
+        <AssociationConnector Association="LMSDBModel.FK__BookIssue__Membe__276EDEB3" />
+        <AssociationConnector Association="LMSDBModel.FK__BookIssue__Staff__29572725" />
+        <AssociationConnector Association="LMSDBModel.FK__Fine__StaffMembe__2A4B4B5E" />
+        <AssociationConnector Association="LMSDBModel.FK__Member__StaffMem__45F365D3" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<OnlineLMS.Models.BookModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Book Details</h2>
+
+<p class=" = btn btn-primary">
+    @Html.ActionLink("Create New", "AddData")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookCategoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookCategoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubjectID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Edit", "Edit", new { id = item.BookID })
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Details", "Details", new { id = item.BookID })
+        </td>
+        <td class="btn btn-primary">
+            @Html.ActionLink("Delete", "Delete", new { id = item.BookID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<OnlineLMS.Models.AssesionMappingModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Assesion Mapping Details</h2>
+
+<p class="btn btn-primary">
+    @Html.ActionLink("Create New", "AddData")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AssesionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.AssesionID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BookID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td class="btn btn-primary">
+        @Html.ActionLink("Edit", "Edit", new { id = item.AssesionID})
+    </td>
+    <td class="btn btn-primary">
+        @Html.ActionLink("Details", "Details", new { id = item.AssesionID })
+    </td>
+    <td class="btn btn-primary">
+        @Html.ActionLink("Delete", "Delete", new { id = item.AssesionID })
+    </td>
+</tr>
+}
+
+</table>
